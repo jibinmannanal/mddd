@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_variables
-    @seva_types =SevaType.where(id:Seva.where(status:"active").pluck(:seva_type_id)&.uniq )
+    @seva_types =SevaType.where(id:Seva.where(status:"active")&.pluck(:seva_type_id)&.uniq )
 
 end
     # Confirms a logged-in user.
