@@ -1,8 +1,14 @@
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
 
 /* mixins, variables, etc. */
 
-
-
+$gray-medium-light: #eaeaea;
+$gray-light: #D3D3D3;
+$gray: #808080;
+$gray-darker: #A9A9A9;
+$gray-lighter:  #D3D3D3;
+ $state-danger-text: #dc3545;
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -49,7 +55,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #eaeaea;
+  color: $gray-light;
 }
 
 p {
@@ -80,12 +86,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #eaeaea;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
   a {
-    color: #eaeaea;
+    color: $gray;
     &:hover {
-      color: #eaeaea;
+      color: $gray-darker;
     }
   }
   small {
@@ -172,7 +178,7 @@ aside {
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid #eaeaea;
+    border-left: 1px solid $gray-lighter;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -224,6 +230,12 @@ input {
   }
 }
 
+.field_with_errors {
+  @extend .has-error !optional;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
 
 .checkbox {
   margin-top: -10px;
@@ -247,7 +259,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid $gray-lighter;
   }
 }
 
@@ -273,7 +285,7 @@ input {
     }
   }
   .timestamp {
-    color: #eaeaea;
+    color: $gray-light;
     display: block;
     margin-left: 60px;
   }
